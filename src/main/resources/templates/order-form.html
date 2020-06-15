@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <form th:action="@{/order/form}" method="post"
+          th:object="${orderInfo}">
+        <fieldset>
+            <legend>Name</legend>
+            <section>
+                <label for="firstName">First name</label>
+                <input type="text" name="firstName"
+                       id="firstName" th:field="*{firstName}">
+                <ul class="error" th:if="${#fields.hasErrors('firstName')}">
+                    <li th:each="err : ${#fields.errors('firstName')}" th:text="${err}"></li>
+                </ul>
+            </section>
+            <section>
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastName"
+                       id="lastName" th:field="*{lastName}">
+                <ul class="error" th:if="${#fields.hasErrors('lastName')}">
+                    <li th:each="err : ${#fields.errors('lastName')}" th:text="${err}"></li>
+                </ul>
+            </section>
+        </fieldset>
+
+        <div id="form-mid">
+            <section>
+                <label for="datePlaced">Date placed</label>
+                <input type="date" name="datePlaced"
+                       id="datePlaced" th:field="*{datePlaced}">
+                <ul class="error" th:if="${#fields.hasErrors('datePlaced')}">
+                    <li th:each="err : ${#fields.errors('datePlaced')}" th:text="${err}"></li>
+                </ul>
+            </section>
+            <section>
+                <label for="userProfilePage">User profile page</label>
+                <input type="text" name="userProfilePage"
+                       id="userProfilePage" th:field="*{userProfilePage}">
+                <ul class="error" th:if="${#fields.hasErrors('userProfilePage')}">
+                    <li th:each="err : ${#fields.errors('userProfilePage')}" th:text="${err}"></li>
+                </ul>
+            </section>
+        </div>
+
+        <fieldset>
+            <legend>Address</legend>
+
+            <section>
+                <label for="street">Street</label>
+                <input type="text" name="street"
+                       id="street" th:field="*{street}">
+                <ul class="error" th:if="${#fields.hasErrors('street')}">
+                    <li th:each="err : ${#fields.errors('street')}" th:text="${err}"></li>
+                </ul>
+            </section>
+            <section>
+                <label for="city">City</label>
+                <input type="text" name="city"
+                       id="city" th:field="*{city}">
+                <ul class="error" th:if="${#fields.hasErrors('city')}">
+                    <li th:each="err : ${#fields.errors('city')}" th:text="${err}"></li>
+                </ul>
+            </section>
+            <section>
+                <label for="state">State</label>
+                <input type="text" name="state"
+                       id="state" th:field="*{state}">
+                <ul class="error" th:if="${#fields.hasErrors('state')}">
+                    <li th:each="err : ${#fields.errors('state')}" th:text="${err}"></li>
+                </ul>
+            </section>
+            <section>
+                <label for="zip">Zip</label>
+                <input type="text" name="zip"
+                       id="zip" th:field="*{zip}">
+                <ul class="error" th:if="${#fields.hasErrors('zip')}">
+                    <li th:each="err : ${#fields.errors('zip')}" th:text="${err}"></li>
+                </ul>
+            </section>
+        </fieldset>
+
+        <button>Submit!</button>
+    </form>
+</body>
+</html>

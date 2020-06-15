@@ -1,0 +1,45 @@
+section {
+    margin: 10px 0;
+}
+
+div#form-mid {
+    margin-left: 16px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+input {
+    display: inline-block;
+    width: 200px;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    margin: 0;
+    padding-left: 10px;
+}
+
+ul.error li {
+    list-style-type: none;
+    padding-left: 10px;
+    padding: 0;
+    color: red;
+}
+
+button {
+    width: 150px;
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 5px;
+}
